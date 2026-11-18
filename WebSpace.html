@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSpace • G12 Learning Mission</title>
+    <link rel="stylesheet" href="WebSpace.css">
+</head>
+<body>
+    <!-- Interactive Star Canvas Background -->
+    <canvas id="stars-canvas"></canvas>
+
+    <header>
+        <h1>WebSpace</h1>
+        <p class="subtitle">- SAKASAMA NO SEKAI -</p>
+        <p class="tagline">Helping Grade 12 Students Escape the Gravity of Struggle</p>
+    </header>
+
+    <nav>
+        <a href="#research">Research</a>
+        <a href="#pathway">Mission Pathway</a>
+        <a href="#game">Snake Minigame</a>
+        <a href="#forum">Student Forum</a>
+        <a href="#quiz">Star Challenge</a>
+        <a href="#progress">My Progress</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h2>Welcome, Cadet! You’re not alone in the void.</h2>
+        <p>Simple, visual pathways created for students who find web development overwhelming.</p>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="section">
+        <h2>The Black Hole of Learning</h2>
+        <p>Research shows many G12 students struggle because lessons feel too fast and abstract. WebSpace breaks everything into tiny, visual missions with instant interactive feedback.</p>
+    </section>
+
+    <!-- TUTORIAL PATHWAY SECTION (All 30 with code blocks) -->
+    <section id="pathway" class="section">
+        <h2>Learning Pathway Tracks (30 Missions)</h2>
+        <p>Choose your pathway track to view filtered step-by-step missions with code previews!</p>
+
+        <div class="path-nav">
+            <button class="path-btn active" onclick="filterPath(this, 'all')">All Tracks</button>
+            <button class="path-btn" onclick="filterPath(this, 'html')">HTML Track (1-10)</button>
+            <button class="path-btn" onclick="filterPath(this, 'css')">CSS Track (11-20)</button>
+            <button class="path-btn" onclick="filterPath(this, 'js')">JS Track (21-30)</button>
+        </div>
+
+        <div class="pathway-container">
+            <!-- HTML Track (Missions 1-10) -->
+            <div class="mission-card path-html">
+                <div class="mission-header">
+                    <div class="mission-number">1</div>
+                    <div>
+                        <h3>HTML Track: Core Structure</h3>
+                        <span class="badge">Structure Phase</span>
+                    </div>
+                </div>
+                <div class="lesson"><h4>Step 1: Basic Structure</h4><div class="code-block">&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;My Planet&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Welcome to Earth&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</div><button onclick="showTryIt('html1')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 2: Headings (h1 - h6)</h4><div class="code-block">&lt;h1&gt;Heading 1&lt;/h1&gt;&lt;h2&gt;Heading 2&lt;/h2&gt;&lt;h3&gt;Heading 3&lt;/h3&gt;</div><button onclick="showTryIt('html2')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 3: Paragraphs &amp; Text Format</h4><div class="code-block">&lt;p&gt;Paragraph 1: Exploring deep space.&lt;/p&gt;&lt;p&gt;Paragraph 2: Cadet log updated.&lt;/p&gt;</div><button onclick="showTryIt('html3')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 4: Hyperlinks &amp; Anchors</h4><div class="code-block">&lt;a href="https://google.com" target="_blank"&gt;Launch to Google&lt;/a&gt;</div><button onclick="showTryIt('html4')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 5: Displaying Images</h4><div class="code-block">&lt;img src="https://via.placeholder.com/150" alt="Space Satellite"&gt;</div><button onclick="showTryIt('html5')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 6: Unordered Bullet Lists</h4><div class="code-block">&lt;ul&gt;&lt;li&gt;Oxygen Tank&lt;/li&gt;&lt;li&gt;Fuel Cell&lt;/li&gt;&lt;li&gt;Space Suit&lt;/li&gt;&lt;/ul&gt;</div><button onclick="showTryIt('html6')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 7: Ordered Numbered Lists</h4><div class="code-block">&lt;ol&gt;&lt;li&gt;Ignite Thrusters&lt;/li&gt;&lt;li&gt;Break Gravity&lt;/li&gt;&lt;li&gt;Enter Orbit&lt;/li&gt;&lt;/ol&gt;</div><button onclick="showTryIt('html7')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 8: Div Section Containers</h4><div class="code-block">&lt;div style="background:#1a0033; padding:15px; border:1px solid #00f0ff;"&gt;&lt;h3&gt;Inside Container&lt;/h3&gt;&lt;/div&gt;</div><button onclick="showTryIt('html8')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 9: Inline Span Tags</h4><div class="code-block">&lt;p&gt;Systems are &lt;span style="color:#00f0ff;"&gt;Operational&lt;/span&gt;.&lt;/p&gt;</div><button onclick="showTryIt('html9')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 10: Interactive Buttons</h4><div class="code-block">&lt;button onclick="alert('System Check Passed!')"&gt;Run Diagnostics&lt;/button&gt;</div><button onclick="showTryIt('html10')">Try it Yourself</button></div>
+            </div>
+
+            <!-- CSS Track (Missions 11-20) -->
+            <div class="mission-card path-css">
+                <div class="mission-header">
+                    <div class="mission-number">2</div>
+                    <div>
+                        <h3>CSS Track: Nebula Styling</h3>
+                        <span class="badge">Styling Phase</span>
+                    </div>
+                </div>
+                <div class="lesson"><h4>Step 11: Colors &amp; Text Styling</h4><div class="code-block">body { background: #0a0a1f; color: #00f0ff; font-family: sans-serif; }</div><button onclick="showTryIt('css1')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 12: Glow Effects &amp; Shadows</h4><div class="code-block">h1 { color: #fff; text-shadow: 0 0 10px #ff00aa; }</div><button onclick="showTryIt('css2')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 13: Background Styling</h4><div class="code-block">div { background: linear-gradient(#1a0033, #0a0a1f); padding: 20px; color: #fff; }</div><button onclick="showTryIt('css3')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 14: Borders &amp; Outlines</h4><div class="code-block">.box { border: 2px solid #00f0ff; padding: 10px; }</div><button onclick="showTryIt('css4')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 15: Border Radius (Rounded Corners)</h4><div class="code-block">.orb { background: #ff00aa; width: 60px; height: 60px; border-radius: 50%; }</div><button onclick="showTryIt('css5')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 16: External Margins</h4><div class="code-block">.card { margin: 30px; background: #111; padding: 10px; color: #00f0ff; }</div><button onclick="showTryIt('css6')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 17: Internal Padding</h4><div class="code-block">.card { padding: 30px; background: #111; color: #00f0ff; }</div><button onclick="showTryIt('css7')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 18: Button Hover Animations</h4><div class="code-block">button { background: #00f0ff; border:none; padding:10px 20px; transition: 0.3s; } button:hover { background: #ff00aa; color: #fff; }</div><button onclick="showTryIt('css8')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 19: Font Family &amp; Sizing</h4><div class="code-block">p { font-family: monospace; font-size: 20px; color: #00ff66; }</div><button onclick="showTryIt('css9')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 20: Flexbox Alignment</h4><div class="code-block">.flex-box { display: flex; justify-content: center; gap: 10px; }</div><button onclick="showTryIt('css10')">Try it Yourself</button></div>
+            </div>
+
+            <!-- JavaScript Track (Missions 21-30) -->
+            <div class="mission-card path-js">
+                <div class="mission-header">
+                    <div class="mission-number">3</div>
+                    <div>
+                        <h3>JavaScript Track: Rocket Logic</h3>
+                        <span class="badge">Interactivity Phase</span>
+                    </div>
+                </div>
+                <div class="lesson"><h4>Step 21: Button Click Alert</h4><div class="code-block">function launch() { alert("Rocket launched into zero gravity! 🚀"); }</div><button onclick="showTryIt('js1')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 22: Dynamic Text Updates</h4><div class="code-block">document.getElementById('st').innerText = 'Thrusters active!';</div><button onclick="showTryIt('js2')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 23: Console Log Output</h4><div class="code-block">console.log('Telemetry received successfully.');</div><button onclick="showTryIt('js3')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 24: Declaring Variables</h4><div class="code-block">let score = 100; alert('Cadet Score: ' + score);</div><button onclick="showTryIt('js4')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 25: Modifying CSS with JS</h4><div class="code-block">document.getElementById('box').style.background = '#00f0ff';</div><button onclick="showTryIt('js5')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 26: Math &amp; Operators</h4><div class="code-block">let totalFuel = 50 + 75; alert('Total Fuel: ' + totalFuel);</div><button onclick="showTryIt('js6')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 27: Conditional If/Else Logic</h4><div class="code-block">let fuel = 20; if(fuel > 50) { alert('Ready'); } else { alert('Low Fuel Warning!'); }</div><button onclick="showTryIt('js7')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 28: Arrays &amp; Collections</h4><div class="code-block">let planets = ['Earth', 'Mars', 'Jupiter']; alert(planets[1]);</div><button onclick="showTryIt('js8')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 29: For Loops &amp; Iteration</h4><div class="code-block">for(let i=1; i<=5; i++) { console.log('Countdown: ' + i); }</div><button onclick="showTryIt('js9')">Try it Yourself</button></div>
+                <div class="lesson"><h4>Step 30: Custom Functions</h4><div class="code-block">function warp() { alert('Warp drive initiated!'); }</div><button onclick="showTryIt('js10')">Try it Yourself</button></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Snake Minigame Section -->
+    <section id="game" class="section">
+        <h2>Cadet Rescue: Snake Mission</h2>
+        <p>Collect star power-ups using Arrow Keys or the Controls below!</p>
+        
+        <div class="game-wrapper">
+            <div class="score-board">Score: <span id="snake-score">0</span></div>
+            <canvas id="snake-canvas" width="400" height="400"></canvas>
+            
+            <div class="game-controls">
+                <button onclick="startSnake()">Start Flight</button>
+                <button onclick="pauseSnake()">Pause / Resume</button>
+            </div>
+
+            <div class="dpad">
+                <div></div>
+                <button onclick="triggerKey('ArrowUp')">▲</button>
+                <div></div>
+                <button onclick="triggerKey('ArrowLeft')">◄</button>
+                <button onclick="triggerKey('ArrowDown')">▼</button>
+                <button onclick="triggerKey('ArrowRight')">►</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Forum -->
+    <section id="forum" class="section">
+        <h2>Student Forum – Ask Fellow Cadets</h2>
+        <div id="forum-list">
+            <div class="forum-post">"How do I center a div? I keep getting stuck in orbit 😭"</div>
+            <div class="forum-post">"CSS Flexbox helped me align my layout! Try flex-direction: column."</div>
+        </div>
+        
+        <div class="forum-input">
+            <input type="text" id="forum-msg" placeholder="Broadcast your question to cadets...">
+            <button onclick="postForumMessage()">Send</button>
+        </div>
+    </section>
+
+    <!-- Star Challenge Quiz -->
+    <section id="quiz" class="section">
+        <h2>Star Challenge Quiz & Leaderboard</h2>
+        
+        <!-- Registration Form Box -->
+        <div id="quiz-reg-box" style="background: rgba(0,0,0,0.5); padding: 25px; border-radius: 12px; text-align: center; border: 1px solid rgba(0, 240, 255, 0.3);">
+            <h3 style="color: var(--accent-cyan); margin-top: 0;">Cadet Identification Required</h3>
+            <p>Enter your Name and Section to unlock the Star Challenge Quiz and Leaderboard:</p>
+            <div style="display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin: 0 auto 20px;">
+                <input type="text" id="cadet-name" placeholder="Cadet Full Name" style="padding: 12px; background: #000; border: 1px solid var(--accent-cyan); color: #fff; border-radius: 8px;">
+                <input type="text" id="cadet-section" placeholder="Grade & Section (e.g., G12-Newton)" style="padding: 12px; background: #000; border: 1px solid var(--accent-cyan); color: #fff; border-radius: 8px;">
+            </div>
+            <button onclick="startQuizMission()">Begin Quiz Mission</button>
+        </div>
+
+        <!-- Quiz Play Area -->
+        <div id="quiz-play-area" style="display: none;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; color: var(--accent-cyan);">
+                <div>Cadet: <span id="display-cadet-info" style="color: #fff;"></span></div>
+                <div>Quiz Score: <span id="quiz-score">0</span> / 30</div>
+                <div>⏱️ Time Left: <span id="quiz-timer">20</span>s</div>
+            </div>
+            <div id="quiz-container">
+                <div id="question" class="quiz-question">Loading question...</div>
+                <div id="options" class="quiz-options"></div>
+                <div id="result" class="quiz-result"></div>
+                <button onclick="checkAnswer()" style="margin-top:15px;">Submit Answer</button>
+            </div>
+        </div>
+
+        <!-- Leaderboard Box -->
+        <div style="margin-top: 30px; background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; border: 1px solid rgba(0, 240, 255, 0.3);">
+            <h3 style="color: var(--accent-cyan); margin-top: 0; font-size: 1.2rem;">🏆 Cadet Leaderboard</h3>
+            <ul id="leaderboard-list" style="list-style: none; padding: 0; margin: 0;">
+                <li style="color: #777;">No cadet scores recorded yet.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Progress Tracker -->
+    <section id="progress" class="section">
+        <h2>My Mission Progress</h2>
+        <p>Star Rank Badges: <span id="stars-count" style="color:#00f0ff; font-weight:bold;">0</span> / 30</p>
+        <div class="progress-bar">
+            <div class="progress" id="progress-bar" style="width: 0%;"></div>
+        </div>
+        <button onclick="earnStar()">Complete Task (+1 Star)</button>
+        <button onclick="downloadCertificate()">Download Certificate</button>
+    </section>
+
+    <!-- Try-It Modal -->
+    <div id="try-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Interactive Code Workshop</h3>
+            <div id="editor-area"></div>
+            <button onclick="runPreview()" style="margin-top:10px;">Run Code</button>
+            <div id="preview-box"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; WebSpace • G12 Learning Mission • All Rights Reserved - Tama na 'to please??</p>
+    </footer>
+
+    <script src="WebSpace.js"></script>
+</body>
+</html>
