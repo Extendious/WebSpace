@@ -37,80 +37,394 @@
         <p>Research shows many G12 students struggle because lessons feel too fast and abstract. WebSpace breaks everything into tiny, visual missions with instant interactive feedback.</p>
     </section>
 
-    <!-- TUTORIAL PATHWAY SECTION (All 30 with code blocks) -->
+    <!-- TUTORIAL PATHWAY SECTION -->
     <section id="pathway" class="section">
         <h2>Learning Pathway Tracks (30 Missions)</h2>
-        <p>Choose your pathway track to view filtered step-by-step missions with code previews!</p>
+        <p>Choose a track to view all 10 missions per track—each with what it is, what it's used for, and how it works!</p>
 
         <div class="path-nav">
-            <button class="path-btn active" onclick="filterPath(this, 'all')">All Tracks</button>
-            <button class="path-btn" onclick="filterPath(this, 'html')">HTML Track (1-10)</button>
-            <button class="path-btn" onclick="filterPath(this, 'css')">CSS Track (11-20)</button>
-            <button class="path-btn" onclick="filterPath(this, 'js')">JS Track (21-30)</button>
+            <button class="path-btn active" onclick="filterPath(this, 'all')">All Tracks (30)</button>
+            <button class="path-btn" onclick="filterPath(this, 'html')">HTML Track (10)</button>
+            <button class="path-btn" onclick="filterPath(this, 'css')">CSS Track (10)</button>
+            <button class="path-btn" onclick="filterPath(this, 'js')">JS Track (10)</button>
         </div>
 
         <div class="pathway-container">
-            <!-- HTML Track (Missions 1-10) -->
+            <!-- HTML TRACK (1-10) -->
             <div class="mission-card path-html">
                 <div class="mission-header">
                     <div class="mission-number">1</div>
                     <div>
-                        <h3>HTML Track: Core Structure</h3>
-                        <span class="badge">Structure Phase</span>
+                        <h3>HTML Track: Structure &amp; Core Tags (Missions 1–10)</h3>
+                        <span class="badge">Structure Phase • 10 Lessons</span>
                     </div>
                 </div>
-                <div class="lesson"><h4>Step 1: Basic Structure</h4><div class="code-block">&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;My Planet&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Welcome to Earth&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</div><button onclick="showTryIt('html1')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 2: Headings (h1 - h6)</h4><div class="code-block">&lt;h1&gt;Heading 1&lt;/h1&gt;&lt;h2&gt;Heading 2&lt;/h2&gt;&lt;h3&gt;Heading 3&lt;/h3&gt;</div><button onclick="showTryIt('html2')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 3: Paragraphs &amp; Text Format</h4><div class="code-block">&lt;p&gt;Paragraph 1: Exploring deep space.&lt;/p&gt;&lt;p&gt;Paragraph 2: Cadet log updated.&lt;/p&gt;</div><button onclick="showTryIt('html3')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 4: Hyperlinks &amp; Anchors</h4><div class="code-block">&lt;a href="https://google.com" target="_blank"&gt;Launch to Google&lt;/a&gt;</div><button onclick="showTryIt('html4')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 5: Displaying Images</h4><div class="code-block">&lt;img src="https://via.placeholder.com/150" alt="Space Satellite"&gt;</div><button onclick="showTryIt('html5')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 6: Unordered Bullet Lists</h4><div class="code-block">&lt;ul&gt;&lt;li&gt;Oxygen Tank&lt;/li&gt;&lt;li&gt;Fuel Cell&lt;/li&gt;&lt;li&gt;Space Suit&lt;/li&gt;&lt;/ul&gt;</div><button onclick="showTryIt('html6')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 7: Ordered Numbered Lists</h4><div class="code-block">&lt;ol&gt;&lt;li&gt;Ignite Thrusters&lt;/li&gt;&lt;li&gt;Break Gravity&lt;/li&gt;&lt;li&gt;Enter Orbit&lt;/li&gt;&lt;/ol&gt;</div><button onclick="showTryIt('html7')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 8: Div Section Containers</h4><div class="code-block">&lt;div style="background:#1a0033; padding:15px; border:1px solid #00f0ff;"&gt;&lt;h3&gt;Inside Container&lt;/h3&gt;&lt;/div&gt;</div><button onclick="showTryIt('html8')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 9: Inline Span Tags</h4><div class="code-block">&lt;p&gt;Systems are &lt;span style="color:#00f0ff;"&gt;Operational&lt;/span&gt;.&lt;/p&gt;</div><button onclick="showTryIt('html9')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 10: Interactive Buttons</h4><div class="code-block">&lt;button onclick="alert('System Check Passed!')"&gt;Run Diagnostics&lt;/button&gt;</div><button onclick="showTryIt('html10')">Try it Yourself</button></div>
+
+                <div class="lesson">
+                    <h4>Mission 1: Document &amp; &lt;h1&gt; Heading</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>&lt;h1&gt;</code> is the primary Level 1 heading tag inside an HTML document.</p>
+                        <p><strong>What it's used for:</strong> Displaying the main title or top headline of a page or mission.</p>
+                        <p><strong>How it works:</strong> As a block-level element, it starts on a new line, spans the available width, and uses large default heading styling.</p>
+                    </div>
+                    <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;My Planet&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;h1&gt;Welcome to Earth&lt;/h1&gt;&lt;/body&gt;
+&lt;/html&gt;</div>
+                    <button onclick="showTryIt('html1')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 2: Headings (&lt;h1&gt;–&lt;h6&gt;) &amp; Paragraphs (&lt;p&gt;)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> Heading tags (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) set title levels, while <code>&lt;p&gt;</code> defines a text paragraph.</p>
+                        <p><strong>What it's used for:</strong> Structuring sections from main titles to subheadings and body paragraphs.</p>
+                        <p><strong>How it works:</strong> Each element renders as a separate block with built-in vertical spacing; smaller numbers mean higher importance/size.</p>
+                    </div>
+                    <div class="code-block">&lt;h1&gt;Main Sector&lt;/h1&gt;
+&lt;h2&gt;Sub-Sector&lt;/h2&gt;
+&lt;p&gt;Cadet log entry.&lt;/p&gt;</div>
+                    <button onclick="showTryIt('html2')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 3: Multiple Paragraphs (&lt;p&gt;)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>&lt;p&gt;</code> is the standard HTML paragraph element for blocks of prose.</p>
+                        <p><strong>What it's used for:</strong> Separating distinct thoughts, explanations, or stories on a page.</p>
+                        <p><strong>How it works:</strong> Browsers automatically place vertical margin between consecutive <code>&lt;p&gt;</code> tags so text doesn't clump together.</p>
+                    </div>
+                    <div class="code-block">&lt;p&gt;Paragraph 1: Exploring deep space.&lt;/p&gt;
+&lt;p&gt;Paragraph 2: Cadet log updated.&lt;/p&gt;</div>
+                    <button onclick="showTryIt('html3')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 4: Hyperlinks (&lt;a&gt; and href)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>&lt;a&gt;</code> is the anchor tag, and <code>href</code> specifies the destination URL or path.</p>
+                        <p><strong>What it's used for:</strong> Navigating between pages, sections, or external websites.</p>
+                        <p><strong>How it works:</strong> Clicking the text inside <code>&lt;a href="..."&gt;</code> tells the browser to load that target address.</p>
+                    </div>
+                    <div class="code-block">&lt;a href="https://example.com" target="_blank"&gt;Launch Link&lt;/a&gt;</div>
+                    <button onclick="showTryIt('html4')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 5: Images (&lt;img&gt;, src, and alt)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>&lt;img&gt;</code> is a self-closing element that embeds pictures using <code>src</code> and describes them with <code>alt</code>.</p>
+                        <p><strong>What it's used for:</strong> Showing visual media, icons, or diagrams while keeping accessibility and fallback text.</p>
+                        <p><strong>How it works:</strong> The browser fetches the image file from <code>src</code> and displays <code>alt</code> text if the image fails to load or for screen readers.</p>
+                    </div>
+                    <div class="code-block">&lt;img src="https://via.placeholder.com/150" alt="Space Satellite"&gt;</div>
+                    <button onclick="showTryIt('html5')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 6: Unordered Lists (&lt;ul&gt; and &lt;li&gt;)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>&lt;ul&gt;</code> creates an unordered list container holding <code>&lt;li&gt;</code> (list item) entries.</p>
+                        <p><strong>What it's used for:</strong> Grouping items where sequence or ranking does not matter, like supply checklists.</p>
+                        <p><strong>How it works:</strong> Each <code>&lt;li&gt;</code> inside <code>&lt;ul&gt;</code> is rendered on its own line with a bullet marker by default.</p>
+                    </div>
+                    <div class="code-block">&lt;ul&gt;
+  &lt;li&gt;Oxygen Tank&lt;/li&gt;
+  &lt;li&gt;Fuel Cell&lt;/li&gt;
+&lt;/ul&gt;</div>
+                    <button onclick="showTryIt('html6')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 7: Ordered Lists (&lt;ol&gt; and &lt;li&gt;)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>&lt;ol&gt;</code> creates a numbered/ordered list container around <code>&lt;li&gt;</code> items.</p>
+                        <p><strong>What it's used for:</strong> Step-by-step instructions, rankings, or sequences where order matters.</p>
+                        <p><strong>How it works:</strong> The browser automatically numbers each <code>&lt;li&gt;</code> in ascending order (1, 2, 3...).</p>
+                    </div>
+                    <div class="code-block">&lt;ol&gt;
+  &lt;li&gt;Ignite Thrusters&lt;/li&gt;
+  &lt;li&gt;Enter Orbit&lt;/li&gt;
+&lt;/ol&gt;</div>
+                    <button onclick="showTryIt('html7')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 8: Block Containers (&lt;div&gt;)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>&lt;div&gt;</code> is a generic block-level container used to group HTML elements together.</p>
+                        <p><strong>What it's used for:</strong> Wrapping sections, cards, or layouts so you can style or position them as a unit.</p>
+                        <p><strong>How it works:</strong> It has no special semantic meaning on its own and spans full width by default until styled with CSS.</p>
+                    </div>
+                    <div class="code-block">&lt;div style="background:#1a0033; padding:12px;"&gt;Mission Box&lt;/div&gt;</div>
+                    <button onclick="showTryIt('html8')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 9: Inline Containers (&lt;span&gt;)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>&lt;span&gt;</code> is a generic inline container for small pieces of text or elements inside a line.</p>
+                        <p><strong>What it's used for:</strong> Highlighting a specific word or phrase inside a sentence without breaking the line.</p>
+                        <p><strong>How it works:</strong> Unlike <code>&lt;div&gt;</code>, a <code>&lt;span&gt;</code> stays inline with surrounding text and only takes the width of its content.</p>
+                    </div>
+                    <div class="code-block">&lt;p&gt;Status: &lt;span style="color:#00f0ff;"&gt;Nominal&lt;/span&gt;&lt;/p&gt;</div>
+                    <button onclick="showTryIt('html9')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 10: Interactive Buttons (&lt;button&gt;)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>&lt;button&gt;</code> is a clickable HTML control element for user actions.</p>
+                        <p><strong>What it's used for:</strong> Triggering actions like submitting forms, opening menus, or running JavaScript functions.</p>
+                        <p><strong>How it works:</strong> When clicked, the browser fires a <code>click</code> event that can run an inline or external JavaScript handler.</p>
+                    </div>
+                    <div class="code-block">&lt;button onclick="alert('Diagnostics OK!')"&gt;Run Check&lt;/button&gt;</div>
+                    <button onclick="showTryIt('html10')">Try it Yourself</button>
+                </div>
             </div>
 
-            <!-- CSS Track (Missions 11-20) -->
+            <!-- CSS TRACK (11-20) -->
             <div class="mission-card path-css">
                 <div class="mission-header">
                     <div class="mission-number">2</div>
                     <div>
-                        <h3>CSS Track: Nebula Styling</h3>
-                        <span class="badge">Styling Phase</span>
+                        <h3>CSS Track: Styling &amp; Layout (Missions 11–20)</h3>
+                        <span class="badge">Styling Phase • 10 Lessons</span>
                     </div>
                 </div>
-                <div class="lesson"><h4>Step 11: Colors &amp; Text Styling</h4><div class="code-block">body { background: #0a0a1f; color: #00f0ff; font-family: sans-serif; }</div><button onclick="showTryIt('css1')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 12: Glow Effects &amp; Shadows</h4><div class="code-block">h1 { color: #fff; text-shadow: 0 0 10px #ff00aa; }</div><button onclick="showTryIt('css2')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 13: Background Styling</h4><div class="code-block">div { background: linear-gradient(#1a0033, #0a0a1f); padding: 20px; color: #fff; }</div><button onclick="showTryIt('css3')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 14: Borders &amp; Outlines</h4><div class="code-block">.box { border: 2px solid #00f0ff; padding: 10px; }</div><button onclick="showTryIt('css4')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 15: Border Radius (Rounded Corners)</h4><div class="code-block">.orb { background: #ff00aa; width: 60px; height: 60px; border-radius: 50%; }</div><button onclick="showTryIt('css5')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 16: External Margins</h4><div class="code-block">.card { margin: 30px; background: #111; padding: 10px; color: #00f0ff; }</div><button onclick="showTryIt('css6')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 17: Internal Padding</h4><div class="code-block">.card { padding: 30px; background: #111; color: #00f0ff; }</div><button onclick="showTryIt('css7')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 18: Button Hover Animations</h4><div class="code-block">button { background: #00f0ff; border:none; padding:10px 20px; transition: 0.3s; } button:hover { background: #ff00aa; color: #fff; }</div><button onclick="showTryIt('css8')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 19: Font Family &amp; Sizing</h4><div class="code-block">p { font-family: monospace; font-size: 20px; color: #00ff66; }</div><button onclick="showTryIt('css9')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 20: Flexbox Alignment</h4><div class="code-block">.flex-box { display: flex; justify-content: center; gap: 10px; }</div><button onclick="showTryIt('css10')">Try it Yourself</button></div>
+
+                <div class="lesson">
+                    <h4>Mission 11: Text &amp; Background Colors (color &amp; background-color)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>color</code> sets foreground text color, while <code>background-color</code> fills the element's background.</p>
+                        <p><strong>What it's used for:</strong> Establishing visual themes, contrast, and readability across sections.</p>
+                        <p><strong>How it works:</strong> CSS matches a selector and applies hex, RGB, or named color values to the text or background area.</p>
+                    </div>
+                    <div class="code-block">.demo-11 { background-color: #0a0a1f; color: #00f0ff; padding: 10px; }</div>
+                    <button onclick="showTryIt('css1')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 12: Text Glow &amp; Shadows (text-shadow)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>text-shadow</code> applies shadow offset, blur, and color effects to text glyphs.</p>
+                        <p><strong>What it's used for:</strong> Adding neon glow, depth, or separation over bright or dark backgrounds.</p>
+                        <p><strong>How it works:</strong> Values follow <code>x-offset y-offset blur-radius color</code>; zero offsets with blur create a centered halo.</p>
+                    </div>
+                    <div class="code-block">.demo-12 { color: #fff; text-shadow: 0 0 10px #ff00aa; }</div>
+                    <button onclick="showTryIt('css2')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 13: Gradients (linear-gradient)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>linear-gradient()</code> creates a smooth color transition along a straight line as a background image.</p>
+                        <p><strong>What it's used for:</strong> Blending two or more colors seamlessly into headers, banners, or cards.</p>
+                        <p><strong>How it works:</strong> The browser interpolates intermediate color stops smoothly from the start color to the end color.</p>
+                    </div>
+                    <div class="code-block">.demo-13 { background: linear-gradient(90deg, #1a0033, #0088aa); padding: 12px; color: #fff; }</div>
+                    <button onclick="showTryIt('css3')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 14: Borders (border)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>border</code> draws an outline around an element's padding box.</p>
+                        <p><strong>What it's used for:</strong> Framing cards, separating boxes, or highlighting active/focused elements.</p>
+                        <p><strong>How it works:</strong> Shorthand syntax combines <code>width style color</code> (such as <code>2px solid #00f0ff</code>) around all four sides.</p>
+                    </div>
+                    <div class="code-block">.demo-14 { border: 2px solid #00f0ff; padding: 10px; }</div>
+                    <button onclick="showTryIt('css4')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 15: Rounded Corners &amp; Circles (border-radius)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>border-radius</code> rounds the corners of an element's box.</p>
+                        <p><strong>What it's used for:</strong> Softening sharp corners on buttons/cards or turning an equal square into a circle (<code>50%</code>).</p>
+                        <p><strong>How it works:</strong> The browser curves each corner using the specified pixel or percentage radius.</p>
+                    </div>
+                    <div class="code-block">.demo-15 { width: 60px; height: 60px; background: #ff00aa; border-radius: 50%; }</div>
+                    <button onclick="showTryIt('css5')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 16: Outer Spacing (margin)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>margin</code> creates transparent space outside an element's border.</p>
+                        <p><strong>What it's used for:</strong> Pushing neighboring elements or sections apart so they aren't touching.</p>
+                        <p><strong>How it works:</strong> It expands the external clearance around the box; vertical margins between block elements can collapse.</p>
+                    </div>
+                    <div class="code-block">.demo-16 { margin: 20px; background: #1a0033; padding: 10px; }</div>
+                    <button onclick="showTryIt('css6')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 17: Inner Spacing (padding)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>padding</code> creates space between an element's content and its border.</p>
+                        <p><strong>What it's used for:</strong> Giving text or buttons comfortable breathing room inside their container.</p>
+                        <p><strong>How it works:</strong> Unlike <code>margin</code>, <code>padding</code> sits inside the box and shows the element's background color.</p>
+                    </div>
+                    <div class="code-block">.demo-17 { padding: 24px; background: #1a0033; border: 1px solid #00f0ff; }</div>
+                    <button onclick="showTryIt('css7')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 18: Hover States (:hover)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>:hover</code> is a CSS pseudo-class that applies styles when the pointer is over an element.</p>
+                        <p><strong>What it's used for:</strong> Giving interactive visual feedback on buttons, links, and cards.</p>
+                        <p><strong>How it works:</strong> When the user moves the cursor onto the selector, the <code>:hover</code> rules activate until the cursor leaves.</p>
+                    </div>
+                    <div class="code-block">&lt;style&gt;.btn-18:hover { background: #ff00aa; color: #fff; }&lt;/style&gt;
+&lt;button class="btn-18"&gt;Hover Me&lt;/button&gt;</div>
+                    <button onclick="showTryIt('css8')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 19: Font Family &amp; Font Size (font-family &amp; font-size)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>font-family</code> selects the typeface, and <code>font-size</code> controls how tall the text appears.</p>
+                        <p><strong>What it's used for:</strong> Matching your design tone (such as clean UI or monospace code) and establishing visual hierarchy.</p>
+                        <p><strong>How it works:</strong> The browser tries fonts in <code>font-family</code> from left to right and sizes characters using units like <code>px</code>, <code>rem</code>, or <code>em</code>.</p>
+                    </div>
+                    <div class="code-block">.demo-19 { font-family: monospace; font-size: 20px; color: #00ff66; }</div>
+                    <button onclick="showTryIt('css9')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 20: Flexbox Alignment (display: flex)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>display: flex</code> turns a container into a flexible layout box for its direct children.</p>
+                        <p><strong>What it's used for:</strong> Aligning items in a row or column, centering content, and distributing spacing evenly.</p>
+                        <p><strong>How it works:</strong> Flex items line up along a main axis and cross axis and can be spaced with properties like <code>justify-content</code> and <code>gap</code>.</p>
+                    </div>
+                    <div class="code-block">.demo-20 { display: flex; justify-content: center; gap: 12px; }</div>
+                    <button onclick="showTryIt('css10')">Try it Yourself</button>
+                </div>
             </div>
 
-            <!-- JavaScript Track (Missions 21-30) -->
+            <!-- JAVASCRIPT TRACK (21-30) -->
             <div class="mission-card path-js">
                 <div class="mission-header">
                     <div class="mission-number">3</div>
                     <div>
-                        <h3>JavaScript Track: Rocket Logic</h3>
-                        <span class="badge">Interactivity Phase</span>
+                        <h3>JavaScript Track: Logic &amp; Interactivity (Missions 21–30)</h3>
+                        <span class="badge">Interactivity Phase • 10 Lessons</span>
                     </div>
                 </div>
-                <div class="lesson"><h4>Step 21: Button Click Alert</h4><div class="code-block">function launch() { alert("Rocket launched into zero gravity! 🚀"); }</div><button onclick="showTryIt('js1')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 22: Dynamic Text Updates</h4><div class="code-block">document.getElementById('st').innerText = 'Thrusters active!';</div><button onclick="showTryIt('js2')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 23: Console Log Output</h4><div class="code-block">console.log('Telemetry received successfully.');</div><button onclick="showTryIt('js3')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 24: Declaring Variables</h4><div class="code-block">let score = 100; alert('Cadet Score: ' + score);</div><button onclick="showTryIt('js4')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 25: Modifying CSS with JS</h4><div class="code-block">document.getElementById('box').style.background = '#00f0ff';</div><button onclick="showTryIt('js5')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 26: Math &amp; Operators</h4><div class="code-block">let totalFuel = 50 + 75; alert('Total Fuel: ' + totalFuel);</div><button onclick="showTryIt('js6')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 27: Conditional If/Else Logic</h4><div class="code-block">let fuel = 20; if(fuel > 50) { alert('Ready'); } else { alert('Low Fuel Warning!'); }</div><button onclick="showTryIt('js7')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 28: Arrays &amp; Collections</h4><div class="code-block">let planets = ['Earth', 'Mars', 'Jupiter']; alert(planets[1]);</div><button onclick="showTryIt('js8')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 29: For Loops &amp; Iteration</h4><div class="code-block">for(let i=1; i<=5; i++) { console.log('Countdown: ' + i); }</div><button onclick="showTryIt('js9')">Try it Yourself</button></div>
-                <div class="lesson"><h4>Step 30: Custom Functions</h4><div class="code-block">function warp() { alert('Warp drive initiated!'); }</div><button onclick="showTryIt('js10')">Try it Yourself</button></div>
+
+                <div class="lesson">
+                    <h4>Mission 21: Functions &amp; alert()</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> A <code>function</code> groups executable code, and <code>alert()</code> shows a simple browser popup message.</p>
+                        <p><strong>What it's used for:</strong> Running a block of logic on demand, such as when a cadet clicks a launch button.</p>
+                        <p><strong>How it works:</strong> Declaring a function stores the instructions; calling it runs each statement inside <code>{ }</code>.</p>
+                    </div>
+                    <div class="code-block">function launch() { alert("Rocket launched! 🚀"); }</div>
+                    <button onclick="showTryIt('js1')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 22: Changing Text with DOM (getElementById &amp; innerText)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>document.getElementById()</code> selects an element by <code>id</code>, and <code>innerText</code> updates its visible text.</p>
+                        <p><strong>What it's used for:</strong> Dynamically updating labels, statuses, or scores without reloading the webpage.</p>
+                        <p><strong>How it works:</strong> JavaScript finds the matching element in the Document Object Model (DOM) and replaces its text string.</p>
+                    </div>
+                    <div class="code-block">document.getElementById('st-22').innerText = 'Thrusters active!';</div>
+                    <button onclick="showTryIt('js2')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 23: Console Debugging (console.log())</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>console.log()</code> prints values or messages to the browser's developer console.</p>
+                        <p><strong>What it's used for:</strong> Checking variable values, tracing code flow, and spotting bugs while building.</p>
+                        <p><strong>How it works:</strong> It writes output into the DevTools console (opened with <code>F12</code>) without interrupting the user's page view.</p>
+                    </div>
+                    <div class="code-block">console.log("Telemetry received!");</div>
+                    <button onclick="showTryIt('js3')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 24: Variables (let)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> <code>let</code> declares a block-scoped variable that can store and update a value.</p>
+                        <p><strong>What it's used for:</strong> Holding changing data like scores, star counts, or user input.</p>
+                        <p><strong>How it works:</strong> <code>let score = 100;</code> reserves a named value in memory that can be reassigned later (e.g., <code>score = 110</code>).</p>
+                    </div>
+                    <div class="code-block">let score = 100; alert("Score: " + score);</div>
+                    <button onclick="showTryIt('js4')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 25: Changing Styles via JS (.style)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> Accessing <code>element.style</code> lets JavaScript read or modify inline CSS properties.</p>
+                        <p><strong>What it's used for:</strong> Changing colors, visibility, or highlights dynamically in response to user actions.</p>
+                        <p><strong>How it works:</strong> Hyphenated CSS names become camelCase in JS (like <code>backgroundColor</code>) and apply directly to the element.</p>
+                    </div>
+                    <div class="code-block">document.getElementById('box-25').style.backgroundColor = '#00f0ff';</div>
+                    <button onclick="showTryIt('js5')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 26: Arithmetic &amp; Calculations (+, -, *, /)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> Arithmetic operators perform math on numbers in JavaScript.</p>
+                        <p><strong>What it's used for:</strong> Calculating totals, percentages, progress bars, or game points.</p>
+                        <p><strong>How it works:</strong> Expressions evaluate using standard math precedence and return a numeric result.</p>
+                    </div>
+                    <div class="code-block">let totalFuel = 50 + 75; alert("Total Fuel: " + totalFuel);</div>
+                    <button onclick="showTryIt('js6')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 27: Conditional Decisions (if / else)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> An <code>if / else</code> statement chooses between two code paths based on a true/false condition.</p>
+                        <p><strong>What it's used for:</strong> Checking conditions like whether a quiz answer is right or if stars reached the goal.</p>
+                        <p><strong>How it works:</strong> If the condition inside <code>( )</code> evaluates to <code>true</code>, the <code>if</code> block runs; otherwise, the <code>else</code> block runs.</p>
+                    </div>
+                    <div class="code-block">let fuel = 20; if (fuel &gt; 50) { alert("Ready"); } else { alert("Low Fuel!"); }</div>
+                    <button onclick="showTryIt('js7')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 28: Arrays ([])</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> An array is an ordered list of values enclosed in square brackets <code>[ ]</code>.</p>
+                        <p><strong>What it's used for:</strong> Storing collections like a list of planets, missions, or quiz options.</p>
+                        <p><strong>How it works:</strong> Arrays use zero-based indexing, so the first item is at index <code>0</code>, the second at <code>1</code>, and so on.</p>
+                    </div>
+                    <div class="code-block">let planets = ['Earth', 'Mars', 'Jupiter']; alert(planets[1]);</div>
+                    <button onclick="showTryIt('js8')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 29: Loops (for)</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> A <code>for</code> loop repeats a block of code a set number of times.</p>
+                        <p><strong>What it's used for:</strong> Generating repeated items, counting down, or stepping through lists automatically.</p>
+                        <p><strong>How it works:</strong> It runs an initializer once, checks a stop condition before each pass, and updates a counter after each pass.</p>
+                    </div>
+                    <div class="code-block">for (let i = 1; i &lt;= 3; i++) { console.log("Countdown: " + i); }</div>
+                    <button onclick="showTryIt('js9')">Try it Yourself</button>
+                </div>
+
+                <div class="lesson">
+                    <h4>Mission 30: Star Achievement &amp; Progress Logic</h4>
+                    <div class="teaching-box">
+                        <p><strong>What it is:</strong> Combining state variables, DOM updates, and threshold checks to track star achievements.</p>
+                        <p><strong>What it's used for:</strong> Awarding stars when cadets learn/answer correctly and unlocking milestones or certificates at target goals.</p>
+                        <p><strong>How it works:</strong> Incrementing a star counter updates both the star badge display and progress bar percentage, triggering an achievement alert when the 30-star goal is met.</p>
+                    </div>
+                    <div class="code-block">stars = Math.min(30, stars + 1); if (stars === 30) alert("Star Achievement Unlocked!");</div>
+                    <button onclick="showTryIt('js10')">Try it Yourself</button>
+                </div>
             </div>
         </div>
     </section>
@@ -119,11 +433,11 @@
     <section id="game" class="section">
         <h2>Cadet Rescue: Snake Mission</h2>
         <p>Collect star power-ups using Arrow Keys or the Controls below!</p>
-        
+
         <div class="game-wrapper">
             <div class="score-board">Score: <span id="snake-score">0</span></div>
             <canvas id="snake-canvas" width="400" height="400"></canvas>
-            
+
             <div class="game-controls">
                 <button onclick="startSnake()">Start Flight</button>
                 <button onclick="pauseSnake()">Pause / Resume</button>
@@ -147,58 +461,31 @@
             <div class="forum-post">"How do I center a div? I keep getting stuck in orbit 😭"</div>
             <div class="forum-post">"CSS Flexbox helped me align my layout! Try flex-direction: column."</div>
         </div>
-        
+
         <div class="forum-input">
             <input type="text" id="forum-msg" placeholder="Broadcast your question to cadets...">
             <button onclick="postForumMessage()">Send</button>
         </div>
     </section>
 
-    <!-- Star Challenge Quiz -->
+    <!-- Star Challenge Quiz (30 Sequential Questions) -->
     <section id="quiz" class="section">
-        <h2>Star Challenge Quiz & Leaderboard</h2>
-        
-        <!-- Registration Form Box -->
-        <div id="quiz-reg-box" style="background: rgba(0,0,0,0.5); padding: 25px; border-radius: 12px; text-align: center; border: 1px solid rgba(0, 240, 255, 0.3);">
-            <h3 style="color: var(--accent-cyan); margin-top: 0;">Cadet Identification Required</h3>
-            <p>Enter your Name and Section to unlock the Star Challenge Quiz and Leaderboard:</p>
-            <div style="display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin: 0 auto 20px;">
-                <input type="text" id="cadet-name" placeholder="Cadet Full Name" style="padding: 12px; background: #000; border: 1px solid var(--accent-cyan); color: #fff; border-radius: 8px;">
-                <input type="text" id="cadet-section" placeholder="Grade & Section (e.g., G12-Newton)" style="padding: 12px; background: #000; border: 1px solid var(--accent-cyan); color: #fff; border-radius: 8px;">
-            </div>
-            <button onclick="startQuizMission()">Begin Quiz Mission</button>
-        </div>
-
-        <!-- Quiz Play Area -->
-        <div id="quiz-play-area" style="display: none;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; color: var(--accent-cyan);">
-                <div>Cadet: <span id="display-cadet-info" style="color: #fff;"></span></div>
-                <div>Quiz Score: <span id="quiz-score">0</span> / 30</div>
-                <div>⏱️ Time Left: <span id="quiz-timer">20</span>s</div>
-            </div>
-            <div id="quiz-container">
-                <div id="question" class="quiz-question">Loading question...</div>
-                <div id="options" class="quiz-options"></div>
-                <div id="result" class="quiz-result"></div>
-                <button onclick="checkAnswer()" style="margin-top:15px;">Submit Answer</button>
-            </div>
-        </div>
-
-        <!-- Leaderboard Box -->
-        <div style="margin-top: 30px; background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; border: 1px solid rgba(0, 240, 255, 0.3);">
-            <h3 style="color: var(--accent-cyan); margin-top: 0; font-size: 1.2rem;">🏆 Cadet Leaderboard</h3>
-            <ul id="leaderboard-list" style="list-style: none; padding: 0; margin: 0;">
-                <li style="color: #777;">No cadet scores recorded yet.</li>
-            </ul>
+        <h2>Star Challenge Quiz (30 Questions • In Order)</h2>
+        <p>Questions 1–30 follow Missions 1–30 in exact order—including star achievement &amp; progress logic!</p>
+        <div id="quiz-container">
+            <div id="question" class="quiz-question">Loading question...</div>
+            <div id="options" class="quiz-options"></div>
+            <div id="result" class="quiz-result"></div>
+            <button onclick="checkAnswer()" style="margin-top:15px;">Submit Answer</button>
         </div>
     </section>
 
     <!-- Progress Tracker -->
     <section id="progress" class="section">
-        <h2>My Mission Progress</h2>
-        <p>Star Rank Badges: <span id="stars-count" style="color:#00f0ff; font-weight:bold;">0</span> / 30</p>
+        <h2>My Mission Progress &amp; Star Achievement</h2>
+        <p>Star Rank Badges: <span id="stars-count" style="color:#00f0ff; font-weight:bold;">3</span> / 30</p>
         <div class="progress-bar">
-            <div class="progress" id="progress-bar" style="width: 0%;"></div>
+            <div class="progress" id="progress-bar" style="width: 10%;"></div>
         </div>
         <button onclick="earnStar()">Complete Task (+1 Star)</button>
         <button onclick="downloadCertificate()">Download Certificate</button>
@@ -216,7 +503,7 @@
     </div>
 
     <footer>
-        <p>&copy; WebSpace • G12 Learning Mission • All Rights Reserved - Tama na 'to please??</p>
+        <p>&copy; WebSpace • G12 Learning Mission • All Rights Reserved</p>
     </footer>
 
     <script src="WebSpace.js"></script>
