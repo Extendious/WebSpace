@@ -13,12 +13,12 @@ function playSound(type) {
     try {
         initAudio();
         if (!audioCtx) return;
-        
+
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.connect(gain);
         gain.connect(audioCtx.destination);
-        
+
         if (type === 'correct') {
             osc.frequency.setValueAtTime(587.33, audioCtx.currentTime);
             osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1);
@@ -44,7 +44,6 @@ function playSound(type) {
         console.log("Audio blocked or not supported", e);
     }
 }
-
 
 // 1. Interactive Star Background Canvas
 const bgCanvas = document.getElementById('stars-canvas');
@@ -96,7 +95,6 @@ if (bgCanvas) {
     window.addEventListener('resize', resizeBgCanvas);
 }
 
-
 // 2. Pathway Filter Logic
 function filterPath(btnElement, category) {
     playSound('click');
@@ -113,44 +111,40 @@ function filterPath(btnElement, category) {
     });
 }
 
-
-// 3. Try-It Editor Dictionary for all 30 Lessons
+// 3. Try-It Editor Dictionary (All 30 Missions)
 const tutorialCodes = {
-    // HTML Track (1-10)
-    'html1': `<!DOCTYPE html>\n<html>\n  <head><title>My Planet</title></head>\n  <body>\n    <h1>Welcome to Earth</h1>\n  </body>\n</html>`,
-    'html2': `<h1>Heading 1</h1>\n<h2>Heading 2</h2>\n<h3>Heading 3</h3>`,
+    'html1': `<!DOCTYPE html>\n<html>\n  <head><title>My Planet</title></head>\n  <body><h1>Welcome to Earth</h1></body>\n</html>`,
+    'html2': `<h1>Main Sector</h1>\n<h2>Sub-Sector</h2>\n<p>Cadet log entry.</p>`,
     'html3': `<p>Paragraph 1: Exploring deep space.</p>\n<p>Paragraph 2: Cadet log updated.</p>`,
-    'html4': `<a href="https://google.com" target="_blank">Launch to Google</a>`,
+    'html4': `<a href="https://example.com" target="_blank">Launch Link</a>`,
     'html5': `<img src="https://via.placeholder.com/150" alt="Space Satellite">`,
-    'html6': `<ul>\n  <li>Oxygen Tank</li>\n  <li>Fuel Cell</li>\n  <li>Space Suit</li>\n</ul>`,
-    'html7': `<ol>\n  <li>Ignite Thrusters</li>\n  <li>Break Gravity</li>\n  <li>Enter Orbit</li>\n</ol>`,
-    'html8': `<div style="background:#1a0033; padding:15px; border:1px solid #00f0ff;">\n  <h3>Inside Container</h3>\n</div>`,
-    'html9': `<p>Systems are <span style="color:#00f0ff;">Operational</span>.</p>`,
-    'html10': `<button onclick="alert('System Check Passed!')">Run Diagnostics</button>`,
+    'html6': `<ul>\n  <li>Oxygen Tank</li>\n  <li>Fuel Cell</li>\n</ul>`,
+    'html7': `<ol>\n  <li>Ignite Thrusters</li>\n  <li>Enter Orbit</li>\n</ol>`,
+    'html8': `<div style="background:#1a0033; padding:12px; border:1px solid #00f0ff;">Mission Box</div>`,
+    'html9': `<p>Status: <span style="color:#00f0ff;">Nominal</span></p>`,
+    'html10': `<button onclick="alert('Diagnostics OK!')">Run Check</button>`,
 
-    // CSS Track (11-20)
-    'css1': `<!DOCTYPE html>\n<html>\n<head>\n<style>\n  body {\n    background: #0a0a1f;\n    color: #00f0ff;\n    font-family: sans-serif;\n  }\n</style>\n</head>\n<body>\n  <h1>Cyan Space Theme</h1>\n</body>\n</html>`,
-    'css2': `<!DOCTYPE html>\n<html>\n<head>\n<style>\n  h1 {\n    color: #fff;\n    text-shadow: 0 0 10px #ff00aa;\n    background: #111;\n    padding: 10px;\n  }\n</style>\n</head>\n<body>\n  <h1>Pink Nebula Glow</h1>\n</body>\n</html>`,
-    'css3': `<!DOCTYPE html>\n<html>\n<head>\n<style>\n  div {\n    background: linear-gradient(#1a0033, #0a0a1f);\n    padding: 20px;\n    color: #fff;\n  }\n</style>\n</head>\n<body>\n  <div>Gradient Section</div>\n</body>\n</html>`,
-    'css4': `<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .box {\n    border: 2px solid #00f0ff;\n    padding: 10px;\n    color: #fff;\n  }\n</style>\n</head>\n<body>\n  <div class="box">Shield Grid</div>\n</body>\n</html>`,
-    'css5': `<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .orb {\n    background: #ff00aa;\n    width: 60px;\n    height: 60px;\n    border-radius: 50%;\n  }\n</style>\n</head>\n<body>\n  <div class="orb"></div>\n</body>\n</html>`,
-    'css6': `<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .card {\n    margin: 30px;\n    background: #111;\n    padding: 10px;\n    color: #00f0ff;\n  }\n</style>\n</head>\n<body>\n  <div class="card">Outer Spaced Card</div>\n</body>\n</html>`,
-    'css7': `<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .card {\n    padding: 30px;\n    background: #111;\n    color: #00f0ff;\n  }\n</style>\n</head>\n<body>\n  <div class="card">Padded Inner Content</div>\n</body>\n</html>`,
-    'css8': `<!DOCTYPE html>\n<html>\n<head>\n<style>\n  button {\n    background: #00f0ff;\n    border: none;\n    padding: 10px 20px;\n    cursor: pointer;\n  }\n  button:hover {\n    background: #ff00aa;\n    color: #fff;\n  }\n</style>\n</head>\n<body>\n  <button>Hover Me</button>\n</body>\n</html>`,
-    'css9': `<!DOCTYPE html>\n<html>\n<head>\n<style>\n  p {\n    font-family: monospace;\n    font-size: 20px;\n    color: #00ff66;\n  }\n</style>\n</head>\n<body>\n  <p>Terminal Display</p>\n</body>\n</html>`,
-    'css10': `<!DOCTYPE html>\n<html>\n<head>\n<style>\n  .flex-box {\n    display: flex;\n    justify-content: center;\n    gap: 10px;\n  }\n</style>\n</head>\n<body>\n  <div class="flex-box"><button>Left</button><button>Right</button></div>\n</body>\n</html>`,
+    'css1': `<style>.demo-11 { background-color: #0a0a1f; color: #00f0ff; padding: 10px; }</style>\n<div class="demo-11">Cyan Space Theme</div>`,
+    'css2': `<style>.demo-12 { color: #fff; text-shadow: 0 0 10px #ff00aa; }</style>\n<h1 class="demo-12">Pink Nebula Glow</h1>`,
+    'css3': `<style>.demo-13 { background: linear-gradient(90deg, #1a0033, #0088aa); padding: 12px; color: #fff; }</style>\n<div class="demo-13">Gradient Banner</div>`,
+    'css4': `<style>.demo-14 { border: 2px solid #00f0ff; padding: 10px; }</style>\n<div class="demo-14">Bordered Box</div>`,
+    'css5': `<style>.demo-15 { width: 60px; height: 60px; background: #ff00aa; border-radius: 50%; }</style>\n<div class="demo-15"></div>`,
+    'css6': `<style>.demo-16 { margin: 20px; background: #1a0033; padding: 10px; }</style>\n<div class="demo-16">Outer Margin Box</div>`,
+    'css7': `<style>.demo-17 { padding: 24px; background: #1a0033; border: 1px solid #00f0ff; }</style>\n<div class="demo-17">Inner Padding Box</div>`,
+    'css8': `<style>.btn-18:hover { background: #ff00aa; color: #fff; }</style>\n<button class="btn-18">Hover Me</button>`,
+    'css9': `<style>.demo-19 { font-family: monospace; font-size: 20px; color: #00ff66; }</style>\n<p class="demo-19">Monospace 20px Text</p>`,
+    'css10': `<style>.demo-20 { display: flex; justify-content: center; gap: 12px; }</style>\n<div class="demo-20"><button>Left</button><button>Right</button></div>`,
 
-    // JS Track (21-30)
-    'js1': `<button onclick="alert('Rocket launched into zero gravity! 🚀')">Launch Rocket</button>`,
-    'js2': `<p id="st">Engine offline</p>\n<button onclick="document.getElementById('st').innerText = 'Thrusters active!'">Engage Engine</button>`,
-    'js3': `<button onclick="console.log('Telemetry received successfully.'); alert('Check browser F12 Console!');">Log Telemetry</button>`,
-    'js4': `<button onclick="let score = 100; alert('Cadet Score: ' + score);">Check Score</button>`,
-    'js5': `<div id="box" style="padding:10px; background:#333; color:#fff;">Shields</div>\n<button onclick="document.getElementById('box').style.background = '#00f0ff';">Activate Shields</button>`,
+    'js1': `<button onclick="launch()">Launch Rocket</button>\n<script>\n  function launch() { alert("Rocket launched! 🚀"); }\n<\/script>`,
+    'js2': `<p id="st-22">Engine offline</p>\n<button onclick="document.getElementById('st-22').innerText = 'Thrusters active!'">Engage</button>`,
+    'js3': `<button onclick="console.log('Telemetry received!'); alert('Check F12 Console!');">Log Telemetry</button>`,
+    'js4': `<button onclick="let score = 100; alert('Score: ' + score);">Show Score</button>`,
+    'js5': `<div id="box-25" style="padding:10px; background:#333; color:#fff;">Shield Box</div>\n<button onclick="document.getElementById('box-25').style.backgroundColor = '#00f0ff'; document.getElementById('box-25').style.color = '#000';">Activate Shield</button>`,
     'js6': `<button onclick="let totalFuel = 50 + 75; alert('Total Fuel: ' + totalFuel);">Calculate Fuel</button>`,
-    'js7': `<button onclick="let fuel = 20; if(fuel > 50) { alert('Ready'); } else { alert('Low Fuel Warning!'); }">Check Fuel</button>`,
-    'js8': `<button onclick="let planets = ['Earth', 'Mars', 'Jupiter']; alert('Planet: ' + planets[1]);">Select Destination</button>`,
-    'js9': `<p id="log"></p>\n<button onclick="let txt=''; for(let i=1; i<=5; i++) { txt += 'Countdown: ' + i + '<br>'; } document.getElementById('log').innerHTML = txt;">Start Countdown</button>`,
-    'js10': `<script>\nfunction warp() {\n  alert('Warp drive initiated!');\n}\n</script>\n<button onclick="warp()">Warp Drive</button>`
+    'js7': `<button onclick="let fuel = 20; if (fuel > 50) { alert('Ready'); } else { alert('Low Fuel!'); }">Check Fuel</button>`,
+    'js8': `<button onclick="let planets = ['Earth', 'Mars', 'Jupiter']; alert(planets[1]);">Pick Planet</button>`,
+    'js9': `<p id="log-29"></p>\n<button onclick="let out=''; for(let i=1;i<=3;i++){ out += 'Countdown: ' + i + '<br>'; } document.getElementById('log-29').innerHTML = out;">Start Loop</button>`,
+    'js10': `<button onclick="earnStar()">Earn +1 Star Achievement</button>`
 };
 
 function showTryIt(type) {
@@ -161,7 +155,7 @@ function showTryIt(type) {
 
     const sampleCode = tutorialCodes[type] || `<h1>Try editing code here!</h1>`;
     if (editor) {
-        editor.innerHTML = `<textarea id="code" style="width:100%; height:120px; background:#050510; color:#00f0ff; border:1px solid #00f0ff; padding:10px; font-family:monospace; border-radius:6px; box-sizing:border-box;"></textarea>`;
+        editor.innerHTML = `<textarea id="code"></textarea>`;
         document.getElementById('code').value = sampleCode;
     }
     runPreview();
@@ -182,7 +176,6 @@ function closeModal() {
     if (modal) modal.style.display = 'none';
 }
 
-
 // 4. Snake Minigame Logic
 const snakeCanvas = document.getElementById('snake-canvas');
 let snake = [{x: 200, y: 200}];
@@ -198,7 +191,7 @@ function initSnake() {
         x: Math.floor(Math.random() * 19) * 20,
         y: Math.floor(Math.random() * 19) * 20
     };
-    dx = 20; 
+    dx = 20;
     dy = 0;
     score = 0;
     isPaused = false;
@@ -294,120 +287,71 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
-
-// 5. Star Quiz System (30 Questions, Leaderboard, Validation)
+// 5. Star Quiz System (30 Questions in Exact Sequential Order, Aligned with Missions 1-30 & Star Achievement)
 const rawQuestions = [
-    { q: "What does HTML stand for?", options: ["Hyper Text Markup Language", "High Tech Modern Language", "Hyperlinks Text Model", "Home Tool Markup Language"], correct: "Hyper Text Markup Language" },
-    { q: "What does CSS stand for?", options: ["Cascading Style Sheets", "Creative Style System", "Computer Styling Script", "Colorful Style Source"], correct: "Cascading Style Sheets" },
-    { q: "Which tag is used for the main heading in HTML?", options: ["<h1>", "<head>", "<h6>", "<header>"], correct: "<h1>" },
-    { q: "Which CSS property changes the text color?", options: ["color", "font-color", "text-color", "background-color"], correct: "color" },
-    { q: "Which JS keyword declares a block variable?", options: ["let", "varname", "constant", "string"], correct: "let" },
-    { q: "Which HTML element creates a clickable link?", options: ["<a>", "<link>", "<href>", "<url>"], correct: "<a>" },
-    { q: "Which symbol denotes an ID selector in CSS?", options: ["#", ".", "*", "&"], correct: "#" },
-    { q: "Which symbol denotes a Class selector in CSS?", options: [".", "#", "_", "%"], correct: "." },
-    { q: "How do you log output to the developer console in JS?", options: ["console.log()", "print()", "log.output()", "window.print()"], correct: "console.log()" },
-    { q: "Which HTML tag is used to embed an image?", options: ["<img>", "<picture>", "<image>", "<src>"], correct: "<img>" },
-    { q: "Which CSS property changes background color?", options: ["background-color", "bg-color", "color-bg", "background-image"], correct: "background-color" },
-    { q: "Which HTML tag creates an unordered bulleted list?", options: ["<ul>", "<ol>", "<li>", "<list>"], correct: "<ul>" },
-    { q: "Which HTML tag creates an ordered numbered list?", options: ["<ol>", "<ul>", "<li>", "<numlist>"], correct: "<ol>" },
-    { q: "How do you write a comment in HTML?", options: ["<!-- Comment -->", "// Comment", "/* Comment */", "' Comment"], correct: "<!-- Comment -->" },
-    { q: "How do you write a comment in CSS?", options: ["/* Comment */", "// Comment", "<!-- Comment -->", "# Comment"], correct: "/* Comment */" },
-    { q: "Which CSS property changes font size?", options: ["font-size", "text-size", "size", "font-weight"], correct: "font-size" },
-    { q: "Which HTML tag defines a table row?", options: ["<tr>", "<td>", "<table>", "<th>"], correct: "<tr>" },
-    { q: "What does DOM stand for in JS?", options: ["Document Object Model", "Data Object Map", "Digital Online Medium", "Document Orientation Mode"], correct: "Document Object Model" },
-    { q: "Which CSS property makes text bold?", options: ["font-weight: bold;", "text-style: bold;", "bold: true;", "font-type: bold;"], correct: "font-weight: bold;" },
-    { q: "Which HTML tag contains page metadata?", options: ["<head>", "<body>", "<meta-data>", "<title>"], correct: "<head>" },
-    { q: "What data type represents true or false in JS?", options: ["Boolean", "String", "Number", "Object"], correct: "Boolean" },
-    { q: "Which CSS property adds inner spacing inside borders?", options: ["padding", "margin", "spacing", "border-spacing"], correct: "padding" },
-    { q: "Which CSS property adds outer spacing around elements?", options: ["margin", "padding", "spacing", "outer-space"], correct: "margin" },
-    { q: "How do you write an array in JS?", options: ["let list = [1, 2];", "let list = (1, 2);", "let list = {1, 2};", "let list = <1, 2>;"], correct: "let list = [1, 2];" },
-    { q: "Which attribute specifies an image source URL?", options: ["src", "href", "link", "url"], correct: "src" },
-    { q: "Which JS click event handler attribute is used on elements?", options: ["onclick", "onpress", "onmouseclick", "click-event"], correct: "onclick" },
-    { q: "Which CSS layout property aligns items in flexible boxes?", options: ["display: flex;", "display: block;", "display: grid-box;", "layout: flex;"], correct: "display: flex;" },
-    { q: "Which assignment operator is used in JS?", options: ["=", "==", "===", "=>"], correct: "=" },
-    { q: "Which HTML tag creates a button?", options: ["<button>", "<btn>", "<click>", "<input type='click'>"], correct: "<button>" },
-    { q: "Which CSS property rounds element borders?", options: ["border-radius", "corner-radius", "round-border", "radius"], correct: "border-radius" }
+    // Mission 1-10 (HTML Track)
+    { q: "[Mission 1] Which HTML tag represents the main Level 1 heading?", options: ["<h1>", "<head>", "<h6>", "<title>"], correct: "<h1>" },
+    { q: "[Mission 2] Which tag defines a text paragraph in HTML?", options: ["<p>", "<h1>", "<ul>", "<div>"], correct: "<p>" },
+    { q: "[Mission 3] How do consecutive <p> elements behave by default in HTML?", options: ["Each starts on a new line with vertical spacing", "They stay on one unbroken line", "They only show inside a table", "They hide until clicked"], correct: "Each starts on a new line with vertical spacing" },
+    { q: "[Mission 4] Which attribute on an <a> tag sets the destination link?", options: ["href", "src", "alt", "loop"], correct: "href" },
+    { q: "[Mission 5] Which attribute on an <img> tag provides fallback/accessibility text?", options: ["alt", "href", "rel", "type"], correct: "alt" },
+    { q: "[Mission 6] Which HTML tag creates an unordered (bulleted) list?", options: ["<ul>", "<ol>", "<dl>", "<table>"], correct: "<ul>" },
+    { q: "[Mission 7] Which HTML tag creates an ordered (numbered) list?", options: ["<ol>", "<ul>", "<span>", "<br>"], correct: "<ol>" },
+    { q: "[Mission 8] What is a <div> primarily used for in HTML?", options: ["Grouping elements as a block-level container", "Creating numbered lists", "Playing audio files", "Defining page metadata"], correct: "Grouping elements as a block-level container" },
+    { q: "[Mission 9] How does a <span> behave compared to a <div>?", options: ["It is an inline container within a line", "It forces a full-width block break", "It creates a table row", "It loads external scripts"], correct: "It is an inline container within a line" },
+    { q: "[Mission 10] Which HTML element creates a clickable button?", options: ["<button>", "<link>", "<meta>", "<hr>"], correct: "<button>" },
+
+    // Mission 11-20 (CSS Track)
+    { q: "[Mission 11] Which CSS property changes text color?", options: ["color", "background-color", "border-radius", "display"], correct: "color" },
+    { q: "[Mission 12] Which CSS property adds glow or shadow effects to text?", options: ["text-shadow", "font-family", "list-style", "z-index"], correct: "text-shadow" },
+    { q: "[Mission 13] Which CSS function creates a smooth color gradient background?", options: ["linear-gradient()", "rgb()", "calc()", "var()"], correct: "linear-gradient()" },
+    { q: "[Mission 14] Which CSS property draws an outline around an element?", options: ["border", "margin", "padding", "gap"], correct: "border" },
+    { q: "[Mission 15] Which CSS property rounds corners or creates a circle at 50%?", options: ["border-radius", "padding", "margin", "font-size"], correct: "border-radius" },
+    { q: "[Mission 16] Which CSS property adds outer spacing around an element?", options: ["margin", "padding", "color", "text-align"], correct: "margin" },
+    { q: "[Mission 17] Which CSS property adds inner spacing between content and border?", options: ["padding", "margin", "href", "src"], correct: "padding" },
+    { q: "[Mission 18] Which CSS pseudo-class styles an element when hovered by a cursor?", options: [":hover", ":active", ":first-child", "::before"], correct: ":hover" },
+    { q: "[Mission 19] Which CSS property sets the typeface of text?", options: ["font-family", "background-color", "flex-direction", "overflow"], correct: "font-family" },
+    { q: "[Mission 20] Which CSS declaration turns a container into a Flexbox layout?", options: ["display: flex;", "display: none;", "position: fixed;", "float: left;"], correct: "display: flex;" },
+
+    // Mission 21-30 (JavaScript Track & Star Achievement)
+    { q: "[Mission 21] What does alert() do in JavaScript?", options: ["Displays a popup alert box in the browser", "Deletes an HTML element", "Saves a file to GitHub", "Starts a CSS animation"], correct: "Displays a popup alert box in the browser" },
+    { q: "[Mission 22] Which DOM method selects an HTML element by its ID?", options: ["document.getElementById()", "document.createList()", "window.stop()", "array.push()"], correct: "document.getElementById()" },
+    { q: "[Mission 23] Where does console.log() output messages?", options: ["Browser Developer Console (F12)", "Inside a <title> tag", "On the desktop wallpaper", "Inside a CSS file"], correct: "Browser Developer Console (F12)" },
+    { q: "[Mission 24] Which keyword declares a block-scoped variable in JavaScript?", options: ["let", "heading", "style", "tag"], correct: "let" },
+    { q: "[Mission 25] How do you change an element's background color in JS via style?", options: ["el.style.backgroundColor = '#00f0ff'", "el.cssColor('#00f0ff')", "el.font('#00f0ff')", "el.link('#00f0ff')"], correct: "el.style.backgroundColor = '#00f0ff'" },
+    { q: "[Mission 26] What is the value of 50 + 75 in JavaScript?", options: ["125", "5075", "25", "NaN"], correct: "125" },
+    { q: "[Mission 27] Which statement runs code only when a condition is true?", options: ["if", "span", "meta", "ul"], correct: "if" },
+    { q: "[Mission 28] In let planets = ['Earth', 'Mars', 'Jupiter'], what is planets[1]?", options: ["'Mars'", "'Earth'", "'Jupiter'", "undefined"], correct: "'Mars'" },
+    { q: "[Mission 29] What is the main purpose of a for loop in JavaScript?", options: ["Repeat instructions multiple times", "Add a border to text", "Close the browser tab", "Convert HTML to CSS"], correct: "Repeat instructions multiple times" },
+    { q: "[Mission 30 • Star Achievement] How many stars are needed in WebSpace to unlock the graduation certificate?", options: ["30 stars (100% progress)", "1 star", "9 stars", "50 stars"], correct: "30 stars (100% progress)" }
 ];
 
-let cadetName = "";
-let cadetSection = "";
 let currentQuestion = 0;
-let currentChoices = [];
 let selectedChoice = null;
-let quizScore = 0;
-let timeLeft = 20;
-let timerInterval = null;
 
-function startQuizMission() {
-    playSound('click');
-    const nameInput = document.getElementById('cadet-name').value.trim();
-    const sectionInput = document.getElementById('cadet-section').value.trim();
-
-    if (!nameInput || !sectionInput) {
-        alert("Please enter both your Cadet Name and Grade & Section before beginning!");
-        return;
+function shuffleArray(arr) {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
     }
-
-    cadetName = nameInput;
-    cadetSection = sectionInput;
-
-    const cadetInfoEl = document.getElementById('display-cadet-info');
-    const regBoxEl = document.getElementById('quiz-reg-box');
-    const playAreaEl = document.getElementById('quiz-play-area');
-
-    if (cadetInfoEl) cadetInfoEl.textContent = `${cadetName} (${cadetSection})`;
-    if (regBoxEl) regBoxEl.style.display = 'none';
-    if (playAreaEl) playAreaEl.style.display = 'block';
-
-    loadQuestion();
+    return copy;
 }
 
-function shuffleArray(array) {
-    let arr = [...array];
-    for (let i = arr.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
-}
-
-function startTimer() {
-    clearInterval(timerInterval);
-    timeLeft = 20;
-    const timerEl = document.getElementById('quiz-timer');
-    if (timerEl) timerEl.textContent = timeLeft;
-
-    timerInterval = setInterval(() => {
-        timeLeft--;
-        if (timerEl) timerEl.textContent = timeLeft;
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval);
-            playSound('wrong');
-            const result = document.getElementById('result');
-            if (result) {
-                result.textContent = "⏰ Time's up! Moving to next question.";
-                result.style.color = "#ff00aa";
-            }
-            setTimeout(() => {
-                nextStepOrFinish();
-            }, 1500);
-        }
-    }, 1000);
-}
-
-function loadQuestion() {
+function loadQuizQuestion() {
     const qEl = document.getElementById('question');
     const optEl = document.getElementById('options');
+    const resEl = document.getElementById('result');
     if (!qEl || !optEl) return;
 
     selectedChoice = null;
+    if (resEl) resEl.textContent = '';
     const q = rawQuestions[currentQuestion];
-    qEl.textContent = `Question ${currentQuestion + 1} of 30: ${q.q}`;
+    qEl.textContent = `Question ${currentQuestion + 1} of ${rawQuestions.length}: ${q.q}`;
     optEl.innerHTML = '';
 
-    currentChoices = shuffleArray(q.options);
-
-    currentChoices.forEach((choice) => {
+    const jumbledOptions = shuffleArray(q.options);
+    jumbledOptions.forEach((choice) => {
         const btn = document.createElement('button');
         btn.textContent = choice;
         btn.onclick = () => {
@@ -418,20 +362,16 @@ function loadQuestion() {
         };
         optEl.appendChild(btn);
     });
-
-    startTimer();
 }
 
 function checkAnswer() {
     playSound('click');
-    clearInterval(timerInterval);
     const result = document.getElementById('result');
-    if (selectedChoice === null) {
+    if (!selectedChoice) {
         if (result) {
             result.textContent = "Select an option first!";
             result.style.color = "#ff00aa";
         }
-        startTimer();
         return;
     }
 
@@ -439,78 +379,25 @@ function checkAnswer() {
     if (selectedChoice === q.correct) {
         playSound('correct');
         if (result) {
-            result.textContent = "Correct! You earned a star & score point!";
+            result.textContent = "Correct! +1 Star Achievement earned. Moving to next question...";
             result.style.color = "#00f0ff";
         }
-        quizScore++;
-        const scoreEl = document.getElementById('quiz-score');
-        if (scoreEl) scoreEl.textContent = quizScore;
         earnStar();
     } else {
         playSound('wrong');
         if (result) {
-            result.textContent = "Not quite. Try again next time, cadet!";
+            result.textContent = `Not quite! Answer: ${q.correct}`;
             result.style.color = "#ff00aa";
         }
     }
 
     setTimeout(() => {
-        nextStepOrFinish();
-    }, 1800);
+        currentQuestion = (currentQuestion + 1) % rawQuestions.length;
+        loadQuizQuestion();
+    }, 1300);
 }
 
-function nextStepOrFinish() {
-    currentQuestion++;
-    if (currentQuestion < rawQuestions.length) {
-        loadQuestion();
-        const result = document.getElementById('result');
-        if (result) result.textContent = '';
-    } else {
-        clearInterval(timerInterval);
-        const qEl = document.getElementById('question');
-        const optEl = document.getElementById('options');
-        const resultEl = document.getElementById('result');
-
-        if (qEl) qEl.textContent = `🎉 Quiz Completed, ${cadetName}! Final Score: ${quizScore} / 30`;
-        if (optEl) optEl.innerHTML = '';
-        if (resultEl) resultEl.textContent = 'Your score with your name and section has been recorded to the leaderboard!';
-        
-        saveScoreToLeaderboard(cadetName, cadetSection, quizScore);
-    }
-}
-
-// Leaderboard System
-function saveScoreToLeaderboard(name, section, score) {
-    let leaderboard = JSON.parse(localStorage.getItem('webspace_leaderboard')) || [];
-    leaderboard.push({ name: name, section: section, score: score, date: new Date().toLocaleDateString() });
-    
-    leaderboard.sort((a, b) => b.score - a.score);
-    leaderboard = leaderboard.slice(0, 5);
-    localStorage.setItem('webspace_leaderboard', JSON.stringify(leaderboard));
-    renderLeaderboard();
-}
-
-function renderLeaderboard() {
-    const listEl = document.getElementById('leaderboard-list');
-    if (!listEl) return;
-    let leaderboard = JSON.parse(localStorage.getItem('webspace_leaderboard')) || [];
-    
-    if (leaderboard.length === 0) {
-        listEl.innerHTML = '<li style="color: #777;">No cadet scores recorded yet.</li>';
-        return;
-    }
-
-    listEl.innerHTML = '';
-    leaderboard.forEach((entry, idx) => {
-        const li = document.createElement('li');
-        li.style.cssText = "display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem;";
-        li.innerHTML = `<span>#${idx + 1} <strong>${entry.name}</strong> <span style="color:#aaa; font-size:0.85rem;">(${entry.section})</span></span> <span style="color: var(--accent-cyan);">${entry.score} / 30 pts</span>`;
-        listEl.appendChild(li);
-    });
-}
-
-
-// 6. Forum & Progress Tracker
+// 6. Forum & Progress Tracker (Star Achievement out of 30)
 function postForumMessage() {
     playSound('click');
     const input = document.getElementById('forum-msg');
@@ -525,33 +412,35 @@ function postForumMessage() {
     input.value = '';
 }
 
-let userStarProgress = 0;
+const MAX_STARS = 30;
+let userStarProgress = 3;
+
 function earnStar() {
-    if (userStarProgress < 30) {
+    if (userStarProgress < MAX_STARS) {
         userStarProgress++;
         const countEl = document.getElementById('stars-count');
         const barEl = document.getElementById('progress-bar');
         if (countEl) countEl.textContent = userStarProgress;
-        if (barEl) barEl.style.width = (userStarProgress / 30 * 100) + '%';
-        
-        if (userStarProgress === 30) {
+        if (barEl) barEl.style.width = (userStarProgress / MAX_STARS * 100) + '%';
+
+        if (userStarProgress === MAX_STARS) {
             playSound('correct');
-            alert("Mission Accomplished! You collected all 30 stars! Certificate Unlocked.");
+            alert("Star Achievement Unlocked! You collected all 30 stars! Certificate Unlocked.");
         }
     }
 }
 
 function downloadCertificate() {
     playSound('click');
-    if (userStarProgress >= 30) {
+    if (userStarProgress >= MAX_STARS) {
         alert('Master Cadet Certificate downloaded! Outstanding work.');
     } else {
-        alert(`Earn ${30 - userStarProgress} more star(s) to unlock your graduation certificate!`);
+        alert(`Earn ${MAX_STARS - userStarProgress} more star(s) to unlock your Star Achievement certificate!`);
     }
 }
 
 window.onload = function() {
-    renderLeaderboard();
+    loadQuizQuestion();
     initSnake();
     drawSnake();
 };
